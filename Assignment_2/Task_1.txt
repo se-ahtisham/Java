@@ -1,0 +1,34 @@
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+    public static void main(String[] args) {
+
+// task 1:
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("Please Enter String: ");
+        String input= s.nextLine();
+        int lenght=input.length();
+        boolean flag= true;
+
+        for (int i=0; i<lenght/2; i++)
+        {
+            if(input.charAt(i)!=input.charAt(lenght-i-1))
+            {
+                System.out.println("NO palindrome");
+                flag = false;
+                return;
+            }
+        }
+        if(flag)
+        {
+            System.out.println("Plalidrome");
+        }
+
+
+    }
+}

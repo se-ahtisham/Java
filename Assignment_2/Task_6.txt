@@ -1,0 +1,23 @@
+
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner Object = new Scanner(System.in);
+        System.out.print("Please Enter: ");
+        String input = Object.nextLine();
+        if(Pattern.compile("\\(*\\)|\\{*\\} |\\[*\\]").matcher(input).matches())
+        {
+            System.out.println("Valid");
+        }
+        else {
+            System.out.println("Invalid");
+        }
+
+    }
+}

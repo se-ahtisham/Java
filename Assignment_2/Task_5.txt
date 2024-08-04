@@ -1,0 +1,29 @@
+
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Task 3:
+        Scanner Object = new Scanner(System.in);
+        System.out.println("Please Enter: ");
+        String str = Object.nextLine();
+        int number = Integer.parseInt(str);
+        String[] strarray = {"M", "CM", "D", "C", "XC", "L", "X", "IX" , "V" , "I"};
+        int [] intarray={1000,900,500,100,90,50,10,9,5,1};
+        String answer="";
+
+        for(int i=0;i<intarray.length;i++)
+        {
+            int divide= number/intarray[i];
+            if(divide==0){continue;}
+            answer += (i>0 && number==4)? strarray[i]+strarray[i-1]: strarray[i];
+            number%=intarray[i];
+
+        }
+        System.out.println(answer);
+
+    }
+}
